@@ -1,4 +1,4 @@
-import { Entity, ObjectId, ObjectIdColumn, Column } from "typeorm";
+import { Entity, ObjectId, ObjectIdColumn, Column, OneToMany } from "typeorm";
 
 @Entity("users")
 class UserModel {
@@ -13,5 +13,11 @@ class UserModel {
 
     @Column()
     password: string
+
+    @Column()
+    token: string
+
+    @Column()
+    token_revoke: boolean
 }
 export default UserModel;
